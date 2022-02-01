@@ -1,9 +1,193 @@
-@import 'vars';
-@import 'fonts';
-@import 'reset';
-@import 'global';
+@import "vars";
+@import "fonts";
+@import "libs";
+@import "reset";
+@import "global";
 
+.header {
+    display: flex;
+    background: no-repeat url(../images/header-fon.jpg);
+    margin-bottom: 100px;
+    &__info {
+        background-color: rgba(51, 51, 51, 0.75);
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        padding-bottom: 90px;
+    }
+    &__info-text {
+        font-size: 18px;
+        line-height: 24px;
+        @extend %OpenSansCondensed-Bold-700;
+        text-align: center;
+        padding: 0 60px;
+        padding-top: 80px;
+        letter-spacing: 0.1em;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+    }
+    &__info-text::before {
+        content: "";
+        position: absolute;
+        border-bottom: 3px solid #c4c4c4;
+        width: 80px;
+        left: 0px;
+        right: 33px;
+        top: 0px;
+        transform: rotate(90deg);
+    }
+    &__info-social {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__info-link {
+        margin-top: 30px;
+        padding: 0 60px;
+    }
+    &__top {
+        display: flex;
+        justify-content: space-between;
+    }
+    .menu__list {
+        display: flex;
+        margin: 50px 0 50px;
+    }
+    .menu__list-item {
+        font-size: 18px;
+        @extend %OpenSansCondensed-Bold-700;
+        margin-right: 60px;
+        text-transform: uppercase;
+    }
+    .menu__list-link {
+        color: $text;
+        transition: all 0.3s;
+    }
+    .menu__list-link:hover {
+        color: $accent;
+    }
+    &__contact {
+        margin: 50px 0 50px;
+    }
+    &__contact-tel {
+        font-size: 16px;
+        @extend %OpenSansCondensed-Bold-700;
+        color: $text;
+        border-bottom: 2px solid $accent;
+        padding-bottom: 5px;
+        transition: all 0.3s;
+    }
+    &__contact-tel:hover {
+        color: $accent;
+    }
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        margin: 190px 65px 160px 0;
+    }
+    &__content-info {
+        min-width: 540px;
+        margin-top: 130px;
+        margin-right: 125px;
+    }
+    &__content-title {
+        font-size: 64px;
+        line-height: 87px;
+        @extend %OpenSansCondensed-Bold-700;
+        margin-bottom: 50px;
+    }
+    &__content-text {
+        @extend %OpenSansCondensed-Bold-700;
+        max-width: 540px;
+        margin-bottom: 50px;
+    }
+    &__slider {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__slider-inner {
+        max-width: 370px;
+        position: relative;
+    }
+    &__slider-img {
+        max-width: 100%;
+    }
+    &__slider-btn {
+        margin-top: 35px;
+    }
+    &__slider-btnPrev {
+        margin-right: 60px;
+        padding-left: 65px;
+    }
+    &__slider-btnPrev::after {
+        content: "";
+        position: absolute;
+        left: -5px;
+        top: 7px;
+        width: 50px;
+        height: 10px;
+        background: center no-repeat url(../images/arrow-L.png);
+    }
+    &__slider-btnNext {
+        margin-left: 60px;
+        padding-right: 65px;
+    }
+    &__slider-btnNext::before {
+        content: "";
+        position: absolute;
+        right: -5px;
+        top: 7px;
+        width: 50px;
+        height: 10px;
+        background: center no-repeat url(../images/arrow-R.png);
+    }
+}
 
+.about {
+    margin-bottom: 100px;
+    &__title {
+        text-align: center;
+        margin-bottom: 100px;
+    }
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__inner-content {
+        max-width: 445px;
+    }
+    .about-content {
+        &__title {
+            font-size: 21px;
+            line-height: 28px;
+            @extend %OpenSansCondensed-Bold-700;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+    }
+    .about-info {
+        &__title {
+            font-size: 21px;
+            line-height: 28px;
+            @extend %OpenSansCondensed-Bold-700;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+        &__img {
+            margin-bottom: 10px;
+        }
+        &__text {
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+    }
+    &__inner-img {
+        width: 100%;
+        max-width: 350px;
+        max-height: 292px;
+    }
+}
 
-
-@import 'media';
+@import "media";
