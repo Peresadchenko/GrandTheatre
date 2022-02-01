@@ -13,10 +13,13 @@ body {
 }
 
 .title {
-  font-size: 65px;
-  line-height: 48px;
+  font-size: 48px;
+  line-height: 65px;
   color: $text;
-  font-weight: 300;  
+  font-weight: 300;    
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 100px;
 }
 .highlight{
   color: $accent;
@@ -49,6 +52,7 @@ body {
   color: $text;
   @extend %OpenSansCondensed-Bold-700;
   text-transform: uppercase;
+  cursor: pointer;
   transition: all 0.3s;
 }
 .btn:hover {

@@ -98,7 +98,7 @@
         margin-bottom: 50px;
     }
     &__content-text {
-        @extend %OpenSansCondensed-Bold-700;
+        @extend %OpenSans-400;
         max-width: 540px;
         margin-bottom: 50px;
     }
@@ -112,6 +112,7 @@
         position: relative;
     }
     &__slider-img {
+        min-width: 370px;
         max-width: 100%;
     }
     &__slider-btn {
@@ -147,10 +148,6 @@
 
 .about {
     margin-bottom: 100px;
-    &__title {
-        text-align: center;
-        margin-bottom: 100px;
-    }
     &__inner {
         display: flex;
         justify-content: space-between;
@@ -165,6 +162,8 @@
             @extend %OpenSansCondensed-Bold-700;
             text-transform: uppercase;
             margin-bottom: 40px;
+        }
+        &__text {
         }
     }
     .about-info {
@@ -181,12 +180,147 @@
         &__text {
             font-size: 16px;
             margin-bottom: 25px;
+            @extend %OpenSansCondensed-Bold-700;
         }
     }
     &__inner-img {
         width: 100%;
         max-width: 350px;
         max-height: 292px;
+    }
+}
+
+.productions {
+    margin-bottom: 150px;
+    &__slider {
+        margin-left: 145px;
+    }
+    &__slider-item {
+        max-width: 442px;
+    }
+}
+
+.critics {
+    &__inner {
+        background: no-repeat url(../images/critics-fon.png);
+        display: flex;
+        margin-bottom: 150px;
+    }
+    &__date {
+        margin: 125px 105px 125px 180px;
+    }
+    &__date-text {
+        font-size: 72px;
+        line-height: 98px;
+        color: $accent;
+        @extend %OpenSansCondensed-Bold-700;
+    }
+    &__content {
+        margin-top: 170px;
+    }
+    &__stars-img {
+        margin-bottom: 25px;
+    }
+    &__content-text {
+        max-width: 500px;
+        font-size: 36px;
+        line-height: 54px;
+        @extend %OpenSansCondensed-Bold-700;
+    }
+}
+
+.partners {
+    margin-bottom: 40px;
+    &__list {
+        max-width: 1035px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    &__list-item {
+        margin-right: 75px;
+        margin-bottom: 80px;
+    }
+    &__list-item:last-child {
+        margin-right: 0;
+    }
+    &__list-img {
+        max-width: 200px;
+        max-height: 96px;
+    }
+}
+
+.contracts {
+    &__inner {
+        display: flex;
+        border-bottom: 1px solid #565656;
+    }
+    &__info {
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        margin-right: 125px;
+    }
+    &__info-tel,
+    .contracts__info-mail,
+    .contracts__info-address {
+        font-size: 16px;
+        color: $text;
+        @extend %OpenSansCondensed-Bold-700;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        transition: all 0.3s;
+    }
+    &__info-tel:hover,
+    .contracts__info-mail:hover{
+        color: $accent;
+    }
+
+    .form-box {
+        display: flex;
+        &__data {
+            width: 430px;
+        }
+        &__data-input {
+            width: 180px;
+            height: 35px;
+            font-size: 16px;
+            color: $text;
+            border: none;
+            background-color: #444444;
+            margin-bottom: 30px;
+            margin-right: 30px;
+            padding: 15px;
+        }
+        &__data-message {
+            width: 310px;
+            height: 100px;
+            resize: none;
+        }
+    }
+    &__form-box2 {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 70px;
+    }
+    &__form-text {
+        font-size: 12px;
+        color: #989898;
+        @extend %OpenSans-400;
+        max-width: 390px;
+    }
+}
+
+.footer {
+    &__copyright {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+    }
+    &__copyright-text {
+        font-size: 12px;
+        color: #989898;
+        @extend %OpenSans-400;
     }
 }
 
