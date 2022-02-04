@@ -6,7 +6,7 @@
 
 .header {
     display: flex;
-    background: no-repeat url(../images/header-fon.jpg);
+    background: top center no-repeat url(../images/header-fon.jpg);
     margin-bottom: 100px;
     &__info {
         background-color: rgba(51, 51, 51, 0.75);
@@ -197,6 +197,130 @@
     }
     &__slider-item {
         max-width: 442px;
+        max-height: 550px;
+        position: relative;
+    }
+    &__slider-item:hover {
+        .productions__slider-increase {
+            background: center no-repeat url(../images/search.svg);
+            background-color: $accent;
+            border-radius: 50%;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 40%;
+            left: 40%;
+            transition: all 0.5s;
+            opacity: 1;
+        }
+        .productions__slider-text,
+        .productions__slider-date {
+            opacity: -1;
+        }
+    }
+    &__slider-link::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: all 0.5s;
+    }
+    .productions__slider-link:hover::after {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    &__slider-text {
+        font-size: 24px;
+        line-height: 32px;
+        color: $text;
+        text-transform: uppercase;
+        @extend %OpenSansCondensed-Bold-700;
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        transition: all 0.5s;
+    }
+    &__slider-date {
+        font-size: 18px;
+        line-height: 24px;
+        color: $text;
+        text-transform: uppercase;
+        @extend %OpenSansCondensed-Bold-700;
+        position: absolute;
+        bottom: 80px;
+        left: 0px;
+        transform: rotate(270deg);
+        transition: all 0.8s;
+    }
+    &__slider-increase {
+        background: center no-repeat url(../images/search.svg);
+        background-color: $accent;
+        position: absolute;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        top: 40%;
+        left: 40%;
+        transition: all 0.8s;
+        opacity: 0;
+    }
+    &__slider-img {
+        max-width: 442px;
+        height: 550px;
+        width: 100%;
+        object-fit: cover;
+    }
+    .popup {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        opacity: 0;
+        visibility: hidden;
+        overflow-y: auto;
+        overflow-x: hidden;
+        transition: all 0.8s ease 0s;
+    }
+    .popup:target {
+        opacity: 1;
+        visibility: visible;
+    }
+    .popup:target .popup__content {
+        opacity: 1;
+        transform: perspective(600px) translate(0px, 0px) rotateX(0deg);
+    }
+    .popup__area {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    .popup__body {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 10px;
+    }
+    .popup__content {
+        max-width: 100%;
+        position: relative;
+        transition: all 0.8s ease 0s;
+        opacity: 0;
+        transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+    }
+    .popup__close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 40px;
+        color: #000;
+        text-decoration: none;
     }
 }
 
@@ -272,7 +396,7 @@
         transition: all 0.3s;
     }
     &__info-tel:hover,
-    .contracts__info-mail:hover{
+    .contracts__info-mail:hover {
         color: $accent;
     }
 

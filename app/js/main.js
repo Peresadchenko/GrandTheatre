@@ -14,7 +14,7 @@ $(function () {
         slidesToScroll: 3,
         speed: 1000,
         easing: 'ease',
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 2000
     });
 
@@ -27,4 +27,8 @@ $(function () {
     });
 
 });
+
+
+
+
 
