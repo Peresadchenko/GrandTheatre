@@ -50,23 +50,34 @@
         display: flex;
         justify-content: space-between;
     }
-    .menu__list {
-        display: flex;
-        margin: 50px 0 50px;
+    .menu {
+        &__btn {
+            display: none;
+        }
+        &__list {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0 50px;
+        }
+        &__list-item {
+            font-size: 18px;
+            @extend %OpenSansCondensed-Bold-700;
+            margin-right: 60px;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+        }
+        &__list-item:last-child {
+            margin-right: 0;
+        }
+        &__list-link {
+            color: $text;
+            transition: all 0.3s;
+        }
+        &__list-link:hover {
+            color: $accent;
+        }
     }
-    .menu__list-item {
-        font-size: 18px;
-        @extend %OpenSansCondensed-Bold-700;
-        margin-right: 60px;
-        text-transform: uppercase;
-    }
-    .menu__list-link {
-        color: $text;
-        transition: all 0.3s;
-    }
-    .menu__list-link:hover {
-        color: $accent;
-    }
+
     &__contact {
         margin: 50px 0 50px;
     }
@@ -95,6 +106,8 @@
         font-size: 64px;
         line-height: 87px;
         @extend %OpenSansCondensed-Bold-700;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
         margin-bottom: 50px;
     }
     &__content-text {
@@ -164,6 +177,7 @@
             margin-bottom: 40px;
         }
         &__text {
+            @extend %OpenSans-400;
         }
     }
     .about-info {
@@ -199,6 +213,7 @@
         max-width: 442px;
         max-height: 550px;
         position: relative;
+        margin: 0;
     }
     &__slider-item:hover {
         .productions__slider-increase {
@@ -308,7 +323,7 @@
         padding: 30px 10px;
     }
     .popup__content {
-        max-width: 100%;
+        max-width: 100vh;
         position: relative;
         transition: all 0.8s ease 0s;
         opacity: 0;
@@ -316,11 +331,15 @@
     }
     .popup__close {
         position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 40px;
-        color: #000;
-        text-decoration: none;
+        top: 20px;
+        right: 20px;
+        transition: all 0.8s;
+        width: 48px;
+        height: 48px;
+        background: center no-repeat url(../images/close.png);
+    }
+    .popup__close:hover {
+        transform: rotateY(180deg);
     }
 }
 
@@ -374,20 +393,21 @@
     }
 }
 
-.contracts {
+.contacts {
     &__inner {
         display: flex;
+        justify-content: space-between;
         border-bottom: 1px solid #565656;
     }
-    &__info {
-        width: 320px;
+    &__info-list {
+        max-width: 320px;
         display: flex;
         flex-direction: column;
-        margin-right: 125px;
     }
     &__info-tel,
-    .contracts__info-mail,
-    .contracts__info-address {
+    .contacts__info-mail,
+    .contacts__info-address {
+        min-width: 255px;
         font-size: 16px;
         color: $text;
         @extend %OpenSansCondensed-Bold-700;
@@ -396,17 +416,14 @@
         transition: all 0.3s;
     }
     &__info-tel:hover,
-    .contracts__info-mail:hover {
+    .contacts__info-mail:hover {
         color: $accent;
     }
 
     .form-box {
         display: flex;
-        &__data {
-            width: 430px;
-        }
         &__data-input {
-            width: 180px;
+            min-width: 180px;
             height: 35px;
             font-size: 16px;
             color: $text;
@@ -417,10 +434,14 @@
             padding: 15px;
         }
         &__data-message {
-            width: 310px;
+            width: 300px;
             height: 100px;
             resize: none;
+            margin-right: 0;
         }
+    }
+    &__form-box {
+        max-width: 730px;
     }
     &__form-box2 {
         display: flex;
@@ -440,6 +461,7 @@
         display: flex;
         justify-content: space-between;
         margin: 30px 0;
+        @extend %OpenSans-400;
     }
     &__copyright-text {
         font-size: 12px;

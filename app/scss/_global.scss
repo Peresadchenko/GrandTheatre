@@ -6,7 +6,7 @@ body {
   background-color: $default;
 }
 
-body.lock{
+body.lock {
   overflow: hidden;
 }
 
@@ -20,12 +20,12 @@ body.lock{
   font-size: 48px;
   line-height: 65px;
   color: $text;
-  font-weight: 300;    
+  font-weight: 300;
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 100px;
 }
-.highlight{
+.highlight {
   color: $accent;
 }
 
@@ -56,11 +56,13 @@ body.lock{
   color: $text;
   @extend %OpenSansCondensed-Bold-700;
   text-transform: uppercase;
+  letter-spacing: 0.1rem;
   cursor: pointer;
   transition: all 0.3s;
 }
 .btn:hover {
   background-color: #d1aa54a1;
+  border-radius: 5px;
 }
 
 .header__slider-btnPrev,
@@ -78,4 +80,27 @@ body.lock{
 .header__slider-btnPrev:hover,
 .header__slider-btnNext:hover {
   color: $accent;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 12px;
+  color: #989898;
+  line-height: 18px;
+  @extend %OpenSans-400;
+  letter-spacing: 0.05rem;
+}
+
+input::-moz-placeholder {
+  font-size: 12px;
+  color: #989898;
+  line-height: 18px;
+  @extend %OpenSans-400;
+  letter-spacing: 0.05rem;
+}
+textarea::-webkit-input-placeholder{
+  font-size: 12px;
+  color: #989898;
+  line-height: 18px;
+  @extend %OpenSans-400;
+  letter-spacing: 0.05rem;
 }
