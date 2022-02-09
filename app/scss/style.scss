@@ -59,6 +59,9 @@
             justify-content: space-between;
             margin: 50px 0 50px;
         }
+        &__list-social {
+            display: none;
+        }
         &__list-item {
             font-size: 18px;
             @extend %OpenSansCondensed-Bold-700;
@@ -189,6 +192,8 @@
             margin-bottom: 40px;
         }
         &__img {
+            width: 70px;
+            height: 70px;
             margin-bottom: 10px;
         }
         &__text {
@@ -373,23 +378,12 @@
 }
 
 .partners {
-    margin-bottom: 40px;
-    &__list {
-        max-width: 1035px;
+    &__slider-inner {
+        max-width: 100%;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
     }
-    &__list-item {
-        margin-right: 75px;
+    &__slider-img {
         margin-bottom: 80px;
-    }
-    &__list-item:last-child {
-        margin-right: 0;
-    }
-    &__list-img {
-        max-width: 200px;
-        max-height: 96px;
     }
 }
 
@@ -422,19 +416,28 @@
 
     .form-box {
         display: flex;
+        &__data {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__data-inputs {
+            margin-right: 30px;
+        }
+        &__data-mess {
+            width: 70%;
+        }
         &__data-input {
-            min-width: 180px;
+            width: 100%;
             height: 35px;
             font-size: 16px;
             color: $text;
             border: none;
             background-color: #444444;
             margin-bottom: 30px;
-            margin-right: 30px;
             padding: 15px;
         }
         &__data-message {
-            width: 300px;
+            width: 100%;
             height: 100px;
             resize: none;
             margin-right: 0;
