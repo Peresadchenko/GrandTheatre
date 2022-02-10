@@ -130,6 +130,8 @@
     &__slider-img {
         min-width: 370px;
         max-width: 100%;
+        min-height: 510px;
+        object-fit: cover;
     }
     &__slider-btn {
         margin-top: 35px;
@@ -368,6 +370,8 @@
         margin-top: 170px;
     }
     &__stars-img {
+        max-width: 230px;
+        max-height: 25px;
         margin-bottom: 25px;
     }
     &__content-text {
@@ -384,6 +388,8 @@
         display: flex;
     }
     &__slider-img {
+        max-width: 200px;
+        max-height: 100px;
         margin-bottom: 80px;
     }
 }
